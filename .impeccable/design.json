@@ -1,0 +1,158 @@
+{
+  "schemaVersion": 2,
+  "generatedAt": "2026-10-16T15:27:00-03:00",
+  "title": "Design System: Nexo Solar",
+  "extensions": {
+    "colorMeta": {
+      "forest": {
+        "role": "primary",
+        "displayName": "Verde floresta",
+        "canonical": "#24543c",
+        "tonalRamp": ["oklch(15% 0.067 159.5)", "oklch(25% 0.067 159.5)", "oklch(35% 0.067 159.5)", "oklch(45% 0.067 159.5)", "oklch(55% 0.067 159.5)", "oklch(65% 0.067 159.5)", "oklch(80% 0.067 159.5)", "oklch(95% 0.067 159.5)"]
+      },
+      "paper": {
+        "role": "neutral",
+        "displayName": "Marfim",
+        "canonical": "#f7f8f2",
+        "tonalRamp": ["oklch(15% 0.008 114.2)", "oklch(25% 0.008 114.2)", "oklch(35% 0.008 114.2)", "oklch(45% 0.008 114.2)", "oklch(55% 0.008 114.2)", "oklch(65% 0.008 114.2)", "oklch(80% 0.008 114.2)", "oklch(95% 0.008 114.2)"]
+      },
+      "mint": {
+        "role": "secondary",
+        "displayName": "Verde névoa",
+        "canonical": "#e8efe5",
+        "tonalRamp": ["oklch(15% 0.015 136.1)", "oklch(25% 0.015 136.1)", "oklch(35% 0.015 136.1)", "oklch(45% 0.015 136.1)", "oklch(55% 0.015 136.1)", "oklch(65% 0.015 136.1)", "oklch(80% 0.015 136.1)", "oklch(95% 0.015 136.1)"]
+      },
+      "lime": {
+        "role": "accent",
+        "displayName": "Lima suave",
+        "canonical": "#cbea87",
+        "tonalRamp": ["oklch(15% 0.130 123.2)", "oklch(25% 0.130 123.2)", "oklch(35% 0.130 123.2)", "oklch(45% 0.130 123.2)", "oklch(55% 0.130 123.2)", "oklch(65% 0.130 123.2)", "oklch(80% 0.130 123.2)", "oklch(95% 0.130 123.2)"]
+      },
+      "amber": {
+        "role": "accent",
+        "displayName": "Amarelo solar",
+        "canonical": "#f3d98b",
+        "tonalRamp": ["oklch(15% 0.102 91.7)", "oklch(25% 0.102 91.7)", "oklch(35% 0.102 91.7)", "oklch(45% 0.102 91.7)", "oklch(55% 0.102 91.7)", "oklch(65% 0.102 91.7)", "oklch(80% 0.102 91.7)", "oklch(95% 0.102 91.7)"]
+      },
+      "ink": {
+        "role": "neutral",
+        "displayName": "Texto profundo",
+        "canonical": "#16271d",
+        "tonalRamp": ["oklch(15% 0.030 157.6)", "oklch(25% 0.030 157.6)", "oklch(35% 0.030 157.6)", "oklch(45% 0.030 157.6)", "oklch(55% 0.030 157.6)", "oklch(65% 0.030 157.6)", "oklch(80% 0.030 157.6)", "oklch(95% 0.030 157.6)"]
+      },
+      "muted": {
+        "role": "neutral",
+        "displayName": "Texto secundário",
+        "canonical": "#68766b",
+        "tonalRamp": ["oklch(15% 0.024 151.8)", "oklch(25% 0.024 151.8)", "oklch(35% 0.024 151.8)", "oklch(45% 0.024 151.8)", "oklch(55% 0.024 151.8)", "oklch(65% 0.024 151.8)", "oklch(80% 0.024 151.8)", "oklch(95% 0.024 151.8)"]
+      }
+    },
+    "typographyMeta": {
+      "display": { "displayName": "Editorial display", "purpose": "Expressive landing and section headlines." },
+      "body": { "displayName": "Interface body", "purpose": "Readable interface copy and controls." },
+      "label": { "displayName": "Technical mono", "purpose": "Metadata, timestamps, units, and codes." }
+    },
+    "shadows": [
+      { "name": "menu-structural", "value": "0 24px 50px #10271d33", "purpose": "Separates a profile menu from the page." },
+      { "name": "card-hover", "value": "0 20px 40px #10271d1a", "purpose": "Indicates a system card is interactive." },
+      { "name": "editorial-ambient", "value": "0 18px 40px #24543c1f", "purpose": "Supports depth in the landing illustration only." }
+    ],
+    "motion": [
+      { "name": "ease-standard", "value": "cubic-bezier(.22,.8,.24,1)", "purpose": "Shared easing for interface transitions." },
+      { "name": "reduced-motion", "value": "prefers-reduced-motion: reduce", "purpose": "Suppresses nonessential animation and smooth scrolling." }
+    ],
+    "breakpoints": [
+      { "name": "drawer", "value": "1180px" },
+      { "name": "tablet", "value": "900px" },
+      { "name": "compact", "value": "720px" },
+      { "name": "small", "value": "560px" }
+    ]
+  },
+  "components": [
+    {
+      "name": "Primary Button",
+      "kind": "button",
+      "refersTo": "button-primary",
+      "description": "Primary action with the forest-green brand anchor.",
+      "html": "<button class=\"ds-button-primary\" type=\"button\">Acessar plataforma <span aria-hidden=\"true\">→</span></button>",
+      "css": ".ds-button-primary { min-height: 48px; padding: 0 22px; display: inline-flex; align-items: center; justify-content: center; gap: 10px; border: 1px solid transparent; border-radius: 4px; background: var(--forest); color: #fff; font: 700 14px Manrope, system-ui, sans-serif; cursor: pointer; transition: transform .25s var(--ease), background .25s, box-shadow .25s; } .ds-button-primary:hover { transform: translateY(-2px); background: var(--forest-3); box-shadow: 0 10px 26px #24543c40; } .ds-button-primary:focus-visible { outline: 2px solid var(--forest); outline-offset: 2px; box-shadow: 0 0 0 5px var(--lime); } .ds-button-primary:active { transform: translateY(0) scale(.98); }"
+    },
+    {
+      "name": "Secondary Button",
+      "kind": "button",
+      "refersTo": "button-secondary",
+      "description": "Quiet action with a clear border and tonal hover.",
+      "html": "<button class=\"ds-button-secondary\" type=\"button\">Ver demonstração</button>",
+      "css": ".ds-button-secondary { min-height: 48px; padding: 0 22px; display: inline-flex; align-items: center; justify-content: center; border: 1px solid #aebdb1; border-radius: 4px; background: transparent; color: var(--ink); font: 700 14px Manrope, system-ui, sans-serif; cursor: pointer; transition: transform .25s var(--ease), background .25s, border-color .25s; } .ds-button-secondary:hover { transform: translateY(-2px); background: var(--mint); border-color: var(--forest); } .ds-button-secondary:focus-visible { outline: 2px solid var(--forest); outline-offset: 2px; box-shadow: 0 0 0 5px var(--lime); } .ds-button-secondary:active { transform: scale(.98); }"
+    },
+    {
+      "name": "Text Field",
+      "kind": "input",
+      "refersTo": "text-field",
+      "description": "Labeled form control with explicit focus and error states.",
+      "html": "<label class=\"ds-field\"><span>E-mail</span><input type=\"email\" placeholder=\"nome@exemplo.com\"></label>",
+      "css": ".ds-field { display: flex; flex-direction: column; gap: 8px; color: var(--ink); font: 700 13px Manrope, system-ui, sans-serif; } .ds-field input { width: 100%; height: 50px; padding: 0 14px; border: 1px solid #b9c6bc; border-radius: 4px; background: #fff; color: var(--ink); font: 400 15px Manrope, system-ui, sans-serif; transition: border-color .2s, box-shadow .2s; } .ds-field input:hover { border-color: var(--leaf); } .ds-field input:focus-visible { outline: 2px solid var(--forest); outline-offset: 2px; box-shadow: 0 0 0 5px var(--lime); } .ds-field input:invalid:not(:placeholder-shown) { border-color: var(--red); background: #fffafa; }"
+    },
+    {
+      "name": "Active Navigation Item",
+      "kind": "nav",
+      "description": "Selected dashboard destination with a restrained lateral marker.",
+      "html": "<a class=\"ds-nav-item\" href=\"#\" aria-current=\"page\"><span aria-hidden=\"true\">◫</span> Visão geral</a>",
+      "css": ".ds-nav-item { min-height: 46px; padding: 0 14px; display: flex; align-items: center; gap: 12px; border-radius: 4px; background: var(--mint); box-shadow: inset 3px 0 0 var(--forest); color: var(--forest); font: 700 15px Manrope, system-ui, sans-serif; text-decoration: none; transition: background .2s, color .2s; } .ds-nav-item:hover { background: #dfe9dc; color: var(--forest-3); } .ds-nav-item:focus-visible { outline: 2px solid var(--forest); outline-offset: 2px; box-shadow: inset 3px 0 0 var(--forest), 0 0 0 5px var(--lime); }"
+    },
+    {
+      "name": "Communication Status",
+      "kind": "chip",
+      "description": "Textual and tonal communication status indicator.",
+      "html": "<span class=\"ds-status\"><i aria-hidden=\"true\"></i> Comunicação ativa</span>",
+      "css": ".ds-status { min-height: 28px; padding: 5px 11px 5px 9px; display: inline-flex; align-items: center; gap: 7px; border-radius: 999px; background: #e3f1d3; color: var(--forest); font: 700 13px Manrope, system-ui, sans-serif; white-space: nowrap; } .ds-status i { width: 7px; height: 7px; border-radius: 50%; background: var(--leaf); }"
+    },
+    {
+      "name": "Panel",
+      "kind": "card",
+      "refersTo": "panel",
+      "description": "Flat operational surface separated by a subtle border.",
+      "html": "<article class=\"ds-panel\"><small>INDICADOR</small><h3>Estado da bateria</h3><strong>78%</strong><p>Dados fictícios</p></article>",
+      "css": ".ds-panel { padding: 22px; border: 1px solid var(--line); border-radius: 6px; background: #fff; color: var(--ink); font-family: Manrope, system-ui, sans-serif; } .ds-panel small { color: var(--muted); font: 500 11px 'DM Mono', ui-monospace, monospace; letter-spacing: .12em; } .ds-panel h3 { margin: 12px 0; font: 500 17px Fraunces, Georgia, serif; } .ds-panel strong { color: var(--forest); font: 400 36px Fraunces, Georgia, serif; } .ds-panel p { margin: 8px 0 0; color: var(--muted); font-size: 13px; }"
+    },
+    {
+      "name": "Conceptual Energy Flow",
+      "kind": "custom",
+      "description": "Illustrative flow motif; explicitly not a connected system.",
+      "html": "<div class=\"ds-flow\"><span>Painéis FV</span><i aria-hidden=\"true\"></i><span>Inversor</span><i aria-hidden=\"true\"></i><span>Bateria</span><small>FLUXO CONCEITUAL · DADOS DE DEMONSTRAÇÃO</small></div>",
+      "css": ".ds-flow { padding: 18px; display: flex; align-items: center; gap: 10px; flex-wrap: wrap; border: 1px solid #d4dfd3; border-radius: 6px; background: var(--mint); color: var(--forest-3); font: 600 13px Manrope, system-ui, sans-serif; } .ds-flow i { width: 24px; height: 2px; background: var(--leaf); } .ds-flow small { width: 100%; color: var(--muted); font: 500 10px 'DM Mono', ui-monospace, monospace; letter-spacing: .08em; }"
+    }
+  ],
+  "narrative": {
+    "northStar": "Fluxo vivo de energia",
+    "overview": "Natureza, tecnologia e equipamentos distintos se conectam por formas orgânicas, linhas fluidas e sinais de movimento. A identidade é natural, sofisticada, expressiva, precisa e acolhedora: combina uma composição editorial com a clareza que uma ferramenta de monitoramento exige. O efeito de estúdio criativo fica sobretudo na landing; no painel, a legibilidade dos dados e a simplicidade de operação prevalecem.\n\nA base clara de marfim e verdes cria espaço para acentos de energia e estados informativos. Fraunces dá expressão aos títulos, enquanto Manrope e DM Mono sustentam leitura cotidiana, controles e valores técnicos. A profundidade é mínima e funcional: superfícies planas, divisórias sutis e sombras localizadas quando ajudam a comunicar hierarquia ou interação.",
+    "keyCharacteristics": [
+      "Espaço claro e editorial, com verdes naturais e acentos solares comedidos.",
+      "Contraste tipográfico entre títulos expressivos e dados de leitura direta.",
+      "Formas orgânicas reservadas a elementos de marca e ilustrações, sem interferir na operação.",
+      "Estados e métricas devem permanecer distinguíveis e legíveis."
+    ],
+    "rules": [
+      { "name": "The Truthful Status Rule", "body": "Cor de estado comunica somente o estado demonstrativo representado; ausência de dados não deve ser apresentada como diagnóstico físico.", "section": "colors" },
+      { "name": "The Readable Metrics Rule", "body": "Valores, unidades, tabelas e descrições técnicas priorizam leitura rápida; a expressão editorial permanece nos títulos.", "section": "typography" },
+      { "name": "The Functional Elevation Rule", "body": "Sombras explicam interação ou sobreposição; não substituem hierarquia, espaçamento ou contraste.", "section": "elevation" }
+    ],
+    "dos": [
+      "Do usar marfim como base e verde floresta como ação e âncora de identidade.",
+      "Do preservar os valores hexadecimais definidos nos tokens CSS como fonte de verdade.",
+      "Do combinar títulos Fraunces com texto Manrope e metadados DM Mono.",
+      "Do reservar formas orgânicas e animações de fluxo para elementos com significado visual.",
+      "Do manter contraste, foco de teclado, responsividade e prefers-reduced-motion.",
+      "Do marcar claramente dados, equipamentos e estados fictícios.",
+      "Do usar cor junto de texto ou ícone para comunicar estados."
+    ],
+    "donts": [
+      "Don't converter o produto em um dashboard corporativo genérico ou uma interface inteiramente escura.",
+      "Don't copiar as marcas ou composições dos sites de inspiração.",
+      "Don't saturar a interface com cartões arredondados, gradientes decorativos ou sombras pesadas.",
+      "Don't usar imagens genéricas como prova de instalações reais ou da Solarneo.",
+      "Don't deixar animações competir com dados ou reduzir sua leitura.",
+      "Don't sugerir integração, compatibilidade, diagnóstico ou telemetria que o protótipo não possui."
+    ]
+  }
+}

@@ -17,6 +17,7 @@
   }
 
   function build(host, imgs, o, size) {
+    const fallback = host.querySelector('.curve-fallback');
     const { tile, aspect, gap, axis, speed, fade } = o, bend = o.curve * Math.PI / 180;
     const { columns, sweep, unit, limit } = measure(size.w, size.h, tile, aspect, gap, bend);
     const id = 'cg' + (++uid), tileCls = id + 't';
@@ -35,17 +36,24 @@
       html += `<div class="cg-tile ${tileCls}" style="left:calc(50% - ${u(aspect / 2)});top:calc(${axis}% - ${u(.5)});width:${u(aspect)};height:${u(1)};animation:${id} ${duration}s linear ${-t * speed}s infinite">`;
       for (let k = 0; k < SLICES; k++) {
         const last = k === SLICES - 1;
-        html += `<div class="cg-slice${k === 0 ? ' first' : ''}${last ? ' last' : ''}" style="left:${u((aspect - share) / 2)};width:${last ? u(share) : `calc(${u(share)} + 1px)`};height:${u(1)};transform:${turn((aspect / 2 - (k + .5) * share) * unit)}"><img src="${img}" alt="" draggable="false" loading="lazy" style="left:${u(-k * share)};width:${u(aspect)};height:${u(1)}"></div>`;
+        html += `<div class="cg-slice${k === 0 ? ' first' : ''}${last ? ' last' : ''}" style="left:${u((aspect - share) / 2)};width:${last ? u(share) : `calc(${u(share)} + 1px)`};height:${u(1)};transform:${turn((aspect / 2 - (k + .5) * share) * unit)}"><img src="${img}" alt="" draggable="false" loading="eager" style="left:${u(-k * share)};width:${u(aspect)};height:${u(1)}"></div>`;
       }
       html += '</div>';
     }
     host.innerHTML = html + '</div>';
+    if (fallback) host.prepend(fallback);
+    host.classList.remove('has-tiles');
+    const firstImage = host.querySelector('.cg-band img');
+    if (firstImage?.complete && firstImage.naturalWidth > 0) host.classList.add('has-tiles');
     host.dataset.sig = [columns, sweep, unit].join();
   }
 
   function init(host) {
     const imgs = (host.dataset.images || '').split(',').map(s => s.trim()).filter(Boolean);
-    if (!imgs.length) return;
+    if (!imgs.length || !('ResizeObserver' in window) || window.matchMedia('(max-width:720px), (prefers-reduced-motion:reduce)').matches) return;
+    host.addEventListener('load', event => {
+      if (event.target.matches('.cg-band img')) host.classList.add('has-tiles');
+    }, true);
     const n = (k, d) => host.dataset[k] ? Number(host.dataset[k]) : d;
     const o = { tile: n('tile', 52), aspect: n('aspect', 1.45), gap: n('gap', 6), axis: n('axis', 50), curve: Math.min(85, Math.max(5, n('curve', 68))), speed: n('speed', 5), fade: n('fade', 14) };
     let timer;
@@ -59,6 +67,11 @@
       }, 120);
     });
     ro.observe(host);
+    const initial = host.getBoundingClientRect();
+    if (initial.width > 0 && initial.height > 0) {
+      build(host, imgs, o, { w: initial.width, h: initial.height });
+      host.classList.add('ready');
+    }
   }
   document.addEventListener('DOMContentLoaded', () => document.querySelectorAll('[data-curve-gallery]').forEach(init));
 })();

@@ -4,16 +4,16 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="theme-color" content="#f7f8f2">
-  <meta name="description" content="Solarneo Monitor: proposta de plataforma para acompanhar sistemas fotovoltaicos off-grid em um só lugar.">
-  <title>Solarneo Monitor · Monitoramento fotovoltaico off-grid</title>
-  <link rel="stylesheet" href="css/base.css">
-  <link rel="stylesheet" href="css/landing.css"><link rel="stylesheet" href="css/overrides.css"><link rel="stylesheet" href="css/refine.css">
-  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+  <meta name="description" content="Nexo Solar: proposta de plataforma para acompanhar sistemas fotovoltaicos off-grid em um só lugar.">
+  <title>Nexo Solar · Monitoramento fotovoltaico off-grid</title>
+  <link rel="stylesheet" href="CSS/base.css">
+  <link rel="stylesheet" href="CSS/landing.css"><link rel="stylesheet" href="CSS/overrides.css"><link rel="stylesheet" href="CSS/refine.css">
+  <link rel="icon" href="Assets/img/logo/Nexo-Solar-Simbolo.svg" type="image/svg+xml">
 </head>
 <body>
 <main class="landing reveal-on" id="top">
   <header class="topbar">
-    <a class="brand" href="#top" aria-label="Solarneo Monitor, início"><span class="brand-mark"><i></i><i></i><i></i></span><span class="brand-word">solarneo <b>monitor</b></span></a>
+    <a class="brand" href="#top" aria-label="Nexo Solar, início"><span class="brand-mark"><img src="Assets/img/logo/Nexo-Solar-Simbolo.svg" alt=""></span><span class="brand-copy"><span class="brand-word">Nexo Solar</span><span class="brand-descriptor">Monitoramento</span></span></a>
     <nav id="main-nav" aria-label="Principal">
       <a class="nav-link" href="#overview">Visão geral</a>
       <a class="nav-link" href="#recursos">Recursos</a>
@@ -28,7 +28,7 @@
 
   <section class="hero" id="overview">
     <div class="hero-copy">
-      <span class="eyebrow hero-in d1"><i></i>Energia em movimento · Informação em tempo real</span>
+      <span class="eyebrow hero-in d1"><i></i>Sistemas off-grid · informação centralizada</span>
       <h1 class="hero-in d2">Energia sob controle. <em>Mesmo onde a rede não chega.</em></h1>
       <p class="hero-in d3">Uma visão centralizada dos sistemas fotovoltaicos off-grid para acompanhar baterias, inversores, consumo e alertas em um só lugar.</p>
       <div class="hero-actions hero-in d4">
@@ -37,9 +37,20 @@
       </div>
       <span class="demo-note hero-in d5">Protótipo visual · todos os dados são fictícios</span>
     </div>
-    <div class="hero-visual hero-in d3">
-      <div class="energy-illustration" role="img" aria-label="Diagrama ilustrativo dos painéis solares, inversor, bateria, cargas e monitoramento">
-        <div class="energy-wire wire-top"></div><div class="energy-wire wire-bottom"></div><div class="energy-wire wire-down"></div><div class="energy-wire wire-up"></div>
+    <div class="hero-visual hero-in d3" data-liquid-surface>
+      <div class="energy-illustration" role="img" aria-label="Ilustração conceitual de fluxo entre painéis solares, inversor, bateria, cargas e monitoramento">
+        <div class="liquid-sculpture" aria-hidden="true"><svg viewBox="0 0 620 460" focusable="false">
+          <path class="sculpture-mass mass-back" d="M178 381C122 338 118 267 145 203c29-68 88-126 163-141 61-13 124 12 151 61 21 39 17 81-13 115-32 37-65 49-79 101-14 53-58 90-112 93-31 2-57-14-77-51Z"/>
+          <path class="sculpture-mass mass-front" d="M218 375c8-63 45-117 91-168 47-52 96-84 149-91-5 48-35 101-79 145-49 49-104 88-161 114Z"/>
+          <path class="sculpture-vein" d="M186 365c58-72 118-146 249-238M210 388c42-25 94-43 145-54M167 333c21-42 46-79 79-111"/>
+          <path class="current-bed" d="M64 91c77 0 114 46 168 83 49 34 102 40 155 13 54-28 93-96 170-96M64 365c77 0 114-46 168-83 49-34 102-40 155-13 54 28 93 96 170 96M310 76c-44 57-49 96-3 145 45 48 49 81 3 162"/>
+          <path class="energy-current" d="M64 91c77 0 114 46 168 83 49 34 102 40 155 13 54-28 93-96 170-96M64 365c77 0 114-46 168-83 49-34 102-40 155-13 54 28 93 96 170 96M310 76c-44 57-49 96-3 145 45 48 49 81 3 162"/>
+          <circle class="flow-orbit orbit-solar" cx="64" cy="91" r="10"/>
+          <circle class="flow-orbit orbit-inverter" cx="557" cy="91" r="10"/>
+          <circle class="flow-orbit orbit-battery" cx="64" cy="365" r="10"/>
+          <circle class="flow-orbit orbit-loads" cx="557" cy="365" r="10"/>
+          <circle class="sculpture-seed" cx="488" cy="203" r="8"/>
+        </svg></div>
         <div class="energy-node solar"><span data-icon="sun" data-size="24"></span><span class="node-cap"><b>Painéis FV</b><small>1.100 W</small></span></div>
         <div class="energy-node inverter"><span data-icon="cpu" data-size="24"></span><span class="node-cap"><b>Inversor</b><small>Operando</small></span></div>
         <div class="energy-node battery"><span data-icon="battery" data-size="24"></span><span class="node-cap"><b>Bateria</b><small>48 V · LFP</small></span></div>
@@ -58,12 +69,12 @@
 
   <section class="photo-band" data-reveal>
     <div class="photo-copy"><span class="kicker">Onde a rede não chega</span><h2>Sistemas isolados <em>também merecem clareza.</em></h2><p>Propriedades rurais, abrigos e instalações remotas dependem de painéis, baterias e inversores. Saber como estão faz diferença no dia a dia.</p></div>
-    <figure><img src="assets/img/colinas-amanhecer.jpg" alt="Colinas verdes com neblina ao amanhecer" loading="lazy"><figcaption>Imagem ilustrativa</figcaption></figure>
+    <figure><img src="Assets/img/colinas-amanhecer.jpg" alt="Colinas verdes com neblina ao amanhecer" loading="lazy"><figcaption>Imagem ilustrativa</figcaption></figure>
   </section>
   <section class="curve-section" id="natureza" data-reveal>
     <div class="curve-head"><span class="kicker">Natureza e energia</span><h2>Energia que acompanha <em>o ritmo do campo.</em></h2><p>Paisagens e instalações de energia renovável que inspiram a identidade do projeto.</p></div>
-    <div class="curve-gallery" data-curve-gallery data-images="assets/img/turbinas-por-do-sol.jpg,assets/img/luz-na-floresta.jpg,assets/img/fachada-solar.jpg,assets/img/arvore-amanhecer.jpg,assets/img/linhas-transmissao.jpg,assets/img/colinas-amanhecer.jpg" role="img" aria-label="Galeria em movimento com paisagens e estruturas de energia renovável"></div>
-    <small class="curve-note">Imagens ilustrativas (Unsplash). Não representam instalações da Solarneo.</small>
+    <div class="curve-gallery" data-curve-gallery data-images="Assets/img/07-paineis-encosta-rural.png,Assets/img/18-colinas-por-do-sol-rural.png,Assets/img/20-morro-neblina-rural.png,Assets/img/turbinas-por-do-sol.jpg" role="img" aria-label="Sequência ilustrativa com painéis solares em encosta rural, colinas ao pôr do sol, morro com neblina e turbinas eólicas"><img class="curve-fallback" src="Assets/img/turbinas-por-do-sol.jpg" alt="" loading="eager"></div>
+    <small class="curve-note">Imagens ilustrativas; não representam instalações reais nem integração existente.</small>
   </section>
 
 
@@ -72,7 +83,7 @@
     <div data-reveal>
       <div class="unify-controls" role="group" aria-label="Etapas da visualização"><button class="active" type="button" data-unify="false" aria-pressed="true"><b>1</b> Informações dispersas</button><button type="button" data-unify="true" aria-pressed="false"><b>2</b> Visão unificada</button></div>
       <div class="unify-stage" id="unify-stage">
-        <div class="unify-frame" aria-hidden="true"><header><span class="brand"><span class="brand-mark"><i></i><i></i><i></i></span><span class="brand-word">solarneo <b>monitor</b></span></span><span class="demo-pill"><i></i> Dados de demonstração</span></header><div class="frame-chart"><small>Potência · W · últimas 24 h</small><svg viewBox="0 0 300 50" preserveAspectRatio="none" aria-hidden="true"><path d="M0 40 22 36 44 38 70 22 96 30 124 14 150 20 178 8 206 18 236 10 266 22 300 12"></path></svg></div></div>
+        <div class="unify-frame" aria-hidden="true"><header><span class="brand"><span class="brand-mark"><img src="Assets/img/logo/Nexo-Solar-Simbolo.svg" alt=""></span><span class="brand-copy"><span class="brand-word">Nexo Solar</span><span class="brand-descriptor">Monitoramento</span></span></span><span class="demo-pill"><i></i> Dados de demonstração</span></header><div class="frame-chart"><small>Potência · W · últimas 24 h</small><svg viewBox="0 0 300 50" preserveAspectRatio="none" aria-hidden="true"><path d="M0 40 22 36 44 38 70 22 96 30 124 14 150 20 178 8 206 18 236 10 266 22 300 12"></path></svg></div></div>
         <div class="ub ub1"><span class="ub-ico" data-icon="battery"></span><div><small>Bateria</small><b>78% de carga</b></div><em class="ub-src">Interface do BMS</em></div>
         <div class="ub ub2"><span class="ub-ico" data-icon="bolt"></span><div><small>Tensão</small><b>52,4 V</b></div><em class="ub-src">Medidor independente</em></div>
         <div class="ub ub3"><span class="ub-ico" data-icon="activity"></span><div><small>Cargas</small><b>430 W</b></div><em class="ub-src">Tela do inversor</em></div>
@@ -116,17 +127,18 @@
   </section>
 
   <section class="section demo-section" id="demo"><div class="section-heading row" data-reveal><div><span class="kicker">Experimente a proposta</span><h2>Informação técnica, <em>sem ruído.</em></h2></div><p>Alterne as visualizações. Todo o conteúdo desta área é fictício e não representa uma conexão real com equipamentos.</p></div>
-    <div data-reveal><div class="product-demo"><div class="demo-top"><div><span class="mono-label">Solarneo Monitor / Prévia</span><h3>Painel de uma instalação</h3></div><span class="demo-pill"><i></i>Dados fictícios</span></div><div class="demo-body" id="landing-demo-body"><div class="demo-stat"><small>Estado de carga da bateria</small><strong id="preview-soc">78<span>%</span></strong><em><i></i><span id="preview-state">Faixa normal</span></em></div><div class="demo-chart"><header><b id="preview-chart-title">Potência das cargas</b><small>Últimas 24 horas</small></header><svg viewBox="0 0 300 160" preserveAspectRatio="none" aria-label="Gráfico fictício de potência"><path class="preview-chart-area" d="M0 137 20 125 40 129 60 91 80 110 100 62 120 80 140 39 160 54 180 24 200 50 220 35 240 62 260 43 280 58 300 32 L300 160 L0 160Z"></path><path class="preview-chart-line" d="M0 137 20 125 40 129 60 91 80 110 100 62 120 80 140 39 160 54 180 24 200 50 220 35 240 62 260 43 280 58 300 32"></path></svg><div class="preview-ticks"><span>00h</span><span>06h</span><span>12h</span><span>18h</span><span>Agora</span></div></div><div class="demo-side"><small>Alternar indicador</small><div class="demo-switches"><button type="button" class="active" data-preview="soc">Bateria</button><button type="button" data-preview="power">Consumo</button><button type="button" data-preview="pv">Geração FV</button></div><div class="preview-side-stat"><span data-icon="bolt"></span><div><small>Potência instantânea</small><b id="preview-power">430 W</b></div></div><div class="preview-side-stat"><span data-icon="sun"></span><div><small>Geração fotovoltaica</small><b id="preview-pv">1.100 W</b></div></div></div></div></div></div>
+    <div data-reveal><div class="product-demo"><div class="demo-top"><div><span class="mono-label">Nexo Solar / Prévia</span><h3>Painel de uma instalação</h3></div><span class="demo-pill"><i></i>Dados fictícios</span></div><div class="demo-body" id="landing-demo-body"><div class="demo-stat"><small>Estado de carga da bateria</small><strong id="preview-soc">78<span>%</span></strong><em><i></i><span id="preview-state">Faixa normal</span></em></div><div class="demo-chart"><header><b id="preview-chart-title">Potência das cargas</b><small>Últimas 24 horas</small></header><svg viewBox="0 0 300 160" preserveAspectRatio="none" aria-label="Gráfico fictício de potência"><path class="preview-chart-area" d="M0 137 20 125 40 129 60 91 80 110 100 62 120 80 140 39 160 54 180 24 200 50 220 35 240 62 260 43 280 58 300 32 L300 160 L0 160Z"></path><path class="preview-chart-line" d="M0 137 20 125 40 129 60 91 80 110 100 62 120 80 140 39 160 54 180 24 200 50 220 35 240 62 260 43 280 58 300 32"></path></svg><div class="preview-ticks"><span>00h</span><span>06h</span><span>12h</span><span>18h</span><span>Agora</span></div></div><div class="demo-side"><small>Alternar indicador</small><div class="demo-switches"><button type="button" class="active" data-preview="soc">Bateria</button><button type="button" data-preview="power">Consumo</button><button type="button" data-preview="pv">Geração FV</button></div><div class="preview-side-stat"><span data-icon="bolt"></span><div><small>Potência instantânea</small><b id="preview-power">430 W</b></div></div><div class="preview-side-stat"><span data-icon="sun"></span><div><small>Geração fotovoltaica</small><b id="preview-pv">1.100 W</b></div></div></div></div></div></div>
     <div class="center"><a class="btn btn-dark" href="dashboard.html">Entrar na demonstração completa <span data-icon="arrow"></span></a></div>
+<aside class="chat-preview" aria-label="Prévia ilustrativa de conversa"><span class="chat-preview-label">Prévia de conversa · ilustrativa</span><p><b>O que este painel mostra?</b><br>Somente dados fictícios; não há assistente nem análise conectados.</p></aside>
   </section>
 
   <section class="section security" id="seguranca"><div class="security-intro" data-reveal><span class="icon-box" data-icon="shield" data-size="28"></span><span class="kicker">Confiança por princípio</span><h2>Clareza também é saber <em>como o dado é tratado.</em></h2><p>Princípios que orientam a evolução da plataforma. Este protótipo não declara certificações nem auditorias.</p><span class="stale-sample"><span data-icon="clock" data-size="16"></span>Exemplo de aviso: “Último dado há 42 min”</span></div>
     <ul class="security-list"><li data-reveal><span>01</span><b>Acesso controlado à plataforma</b><span data-icon="lock"></span></li><li data-reveal><span>02</span><b>Separação entre dados de diferentes instalações</b><span data-icon="layers"></span></li><li data-reveal><span>03</span><b>Registro do histórico de medições</b><span data-icon="history"></span></li><li data-reveal><span>04</span><b>Identificação de dados desatualizados</b><span data-icon="clock"></span></li><li data-reveal><span>05</span><b>Integrações planejadas para respeitar as interfaces e os limites dos fabricantes</b><span data-icon="shield"></span></li></ul>
   </section>
 
-  <section class="closing"><div class="closing-lines" aria-hidden="true"></div><div data-reveal><span class="kicker">Solarneo Monitor</span><h2>Tenha uma visão mais clara de cada <em>sistema.</em></h2><p>Conheça a experiência de monitoramento pensada para operações fotovoltaicas off-grid.</p><div class="closing-actions"><a class="btn btn-primary" href="#recursos">Conhecer a plataforma</a><a class="btn btn-secondary" href="login.html">Acessar monitoramento</a></div></div><figure data-reveal><img src="https://images.unsplash.com/photo-1497435334941-8c899ee9e8e9?w=700&h=800&fit=crop&auto=format" alt="Paisagem verde sob luz natural" loading="lazy"><figcaption>Energia em equilíbrio</figcaption></figure></section>
+  <section class="closing"><div class="closing-lines" aria-hidden="true"></div><div data-reveal><span class="kicker">Nexo Solar</span><h2>Tenha uma visão mais clara de cada <em>sistema.</em></h2><p>Conheça a experiência de monitoramento pensada para operações fotovoltaicas off-grid.</p><div class="closing-actions"><a class="btn btn-primary" href="#recursos">Conhecer a plataforma</a><a class="btn btn-secondary" href="login.html">Acessar monitoramento</a></div></div><figure data-reveal><img src="Assets/img/arvore-amanhecer.jpg" alt="Paisagem verde sob luz natural" loading="lazy"><figcaption>Energia em equilíbrio</figcaption></figure></section>
 
-  <footer class="footer"><div class="footer-brand"><a class="brand brand-light" href="#top"><span class="brand-mark"><i></i><i></i><i></i></span><span class="brand-word">solarneo <b>monitor</b></span></a><p>Monitoramento fotovoltaico off-grid. Protótipo demonstrativo, sem dados reais.</p></div><nav aria-label="Seções"><h4>Plataforma</h4><a href="#overview">Visão geral</a><a href="#recursos">Recursos</a><a href="#como">Como funciona</a><a href="#compatibilidade">Compatibilidade</a><a href="#seguranca">Segurança</a></nav><div><h4>Acesso</h4><a href="login.html">Acesso ao sistema</a><a href="dashboard.html">Explorar demonstração</a></div><div><h4>Institucional</h4><span>Solarneo Soluções Elétricas</span><span class="placeholder">[Endereço · a definir]</span><span class="placeholder">[Contato · a definir]</span></div><small>© <span id="current-year">2026</span> Solarneo Soluções Elétricas · Marca provisória, substituível por logo oficial</small></footer>
+  <footer class="footer"><div class="footer-brand"><a class="brand brand-light" href="#top"><span class="brand-mark"><img src="Assets/img/logo/Nexo-Solar-Simbolo.svg" alt=""></span><span class="brand-copy"><span class="brand-word">Nexo Solar</span><span class="brand-descriptor">Monitoramento</span></span></a><p>Monitoramento fotovoltaico off-grid. Protótipo demonstrativo, sem dados reais.</p></div><nav aria-label="Seções"><h4>Plataforma</h4><a href="#overview">Visão geral</a><a href="#recursos">Recursos</a><a href="#como">Como funciona</a><a href="#compatibilidade">Compatibilidade</a><a href="#seguranca">Segurança</a></nav><div><h4>Acesso</h4><a href="login.html">Acesso ao sistema</a><a href="dashboard.html">Explorar demonstração</a></div><div><h4>Institucional</h4><span>Solarneo Soluções Elétricas</span><span class="placeholder">[Endereço · a definir]</span><span class="placeholder">[Contato · a definir]</span></div><small>© <span id="current-year">2026</span> Solarneo Soluções Elétricas · Protótipo acadêmico do SENAI São João del-Rei</small></footer>
 </main>
-<script src="js/common.js" defer></script><script src="js/landing.js" defer></script><script src="js/curve-gallery.js" defer></script>
+<script src="JS/common.js" defer></script><script src="JS/demo-data.js" defer></script><script src="JS/landing.js" defer></script><script src="JS/curve-gallery.js" defer></script>
 </body></html>

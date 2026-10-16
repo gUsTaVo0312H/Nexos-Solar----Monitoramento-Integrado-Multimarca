@@ -1304,7 +1304,7 @@
   .top-status {
     gap: 10px;
   }
-  .top-status> .status, .last-update {
+  .top-status> .status, .top-status> #top-status-chip, .last-update {
     display: none;
   }
   .mobile-status {

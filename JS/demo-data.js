@@ -16,25 +16,33 @@
   const fmt = (n,d=0) => Number(n).toLocaleString('pt-BR',{minimumFractionDigits:d,maximumFractionDigits:d});
   const clock = (seconds) => [Math.floor(seconds/3600)%24,Math.floor(seconds%3600/60),seconds%60].map(n=>String(n).padStart(2,'0')).join(':');
   function seriesFor(inst, metric, n) {
+    const available = {
+      'Geração FV':inst.pv,
+      Potência:inst.power,
+      Tensão:inst.volt,
+      Corrente:inst.power===null||inst.volt===null||!inst.volt?null:inst.power/inst.volt,
+      SOC:inst.soc
+    }[metric];
+    if (available === null || available === undefined) return [];
     let seed = (inst.id.charCodeAt(6)||1)*7 + metric.length*13 + n;
     const random = () => {seed=(seed*9301+49297)%233280;return seed/233280;};
-    const out=[]; const power=inst.power||0, volt=inst.volt||0, soc=inst.soc||0;
+    const out=[]; const power=inst.power, volt=inst.volt, soc=inst.soc;
     for(let i=0;i<n;i++){const t=i/Math.max(1,n-1);const day=Math.sin(t*Math.PI*2*Math.max(1,n/24)-1.2);const noise=random()-.5;
-      if(metric==='Geração FV') out.push(Math.max(0,(inst.pv||0)*(.55+day*.5+noise*.15)));
+      if(metric==='Geração FV') out.push(Math.max(0,inst.pv*(.55+day*.5+noise*.15)));
       else if(metric==='Potência') out.push(Math.max(40,power*(1+day*.45+noise*.3)));
       else if(metric==='Tensão') out.push(volt+day*1.8+noise*.5);
       else if(metric==='Corrente') out.push(Math.max(.5,(power/(volt||1))*(1+day*.4+noise*.3)));
       else out.push(Math.min(100,Math.max(8,soc+day*14+noise*4)));
     } return out;
   }
-  function hourlyPv(inst){const pv=inst.pv||0;return Array.from({length:24},(_,h)=>Math.round(Math.max(0,Math.sin(((h-6)/12)*Math.PI))*pv*1.18));}
+  function hourlyPv(inst){if(inst.pv===null)return [];const pv=inst.pv;return Array.from({length:24},(_,h)=>Math.round(Math.max(0,Math.sin(((h-6)/12)*Math.PI))*pv*1.18));}
   function hourlyLoad(inst){return seriesFor(inst,'Potência',24).map(Math.round);}
-  function dailyFlow(inst){const load=inst.power||0;return Array.from({length:24},(_,h)=>{const solar=Math.max(0,Math.sin(((h-6)/12)*Math.PI))*(load*2.4);const base=load*(.55+.35*Math.sin(((h-17)/24)*Math.PI*2)**2);return Math.round(solar-base);});}
+  function dailyFlow(inst){if(inst.power===null)return [];const load=inst.power;return Array.from({length:24},(_,h)=>{const solar=Math.max(0,Math.sin(((h-6)/12)*Math.PI))*(load*2.4);const base=load*(.55+.35*Math.sin(((h-17)/24)*Math.PI*2)**2);return Math.round(solar-base);});}
   function batteryAmps(inst){if(inst.pv===null||inst.power===null||!inst.volt)return null;return (inst.pv-inst.power)/inst.volt;}
   function equipmentFor(inst){const off=inst.comm==='offline';const [inv,...ir]=inst.inverter.split(' ');const [bat,...br]=inst.battery.split(' ');return [
-    {name:'Inversor principal',type:'Inversor',maker:inv,model:ir.join(' '),serial:`INV-${inst.id.slice(-3)}-A`,data:off?'Sem dados':'Disponível',update:inst.lastUpdate},
-    {name:'Banco de baterias',type:'Bateria',maker:bat,model:br.join(' '),serial:`BAT-${inst.id.slice(-3)}-B`,data:off?'Sem dados':inst.comm==='stale'?'Parcial':'Disponível',update:inst.lastUpdate},
-    {name:'Gateway de coleta',type:'Gateway',maker:'Solarneo',model:'Edge · protótipo',serial:`GTW-${inst.id.slice(-3)}-C`,data:off?'Sem dados':'Parcial',update:inst.lastUpdate}
+    {name:'Inversor principal',type:'Inversor',maker:inv,model:ir.join(' '),serial:`INV-${inst.id.slice(-3)}-A`,data:off?'Não disponível':'Disponível',update:inst.lastUpdate},
+    {name:'Banco de baterias',type:'Bateria',maker:bat,model:br.join(' '),serial:`BAT-${inst.id.slice(-3)}-B`,data:off?'Não disponível':inst.comm==='stale'?'Parcial':'Disponível',update:inst.lastUpdate},
+    {name:'Gateway de coleta',type:'Gateway',maker:'Protótipo',model:'Coleta simulada',serial:`GTW-${inst.id.slice(-3)}-C`,data:off?'Não disponível':'Parcial',update:inst.lastUpdate}
   ];}
   window.SolarneoData={installs,alerts,metrics,commLabel,fmt,clock,seriesFor,hourlyPv,hourlyLoad,dailyFlow,batteryAmps,equipmentFor};
 })();

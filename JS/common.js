@@ -34,5 +34,78 @@
     });
   }
   window.Solarneo = { renderIcons, icon(name, size = 20) { return `<svg class="icon-inline" width="${size}" height="${size}" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">${paths[name] || paths.info}</svg>`; } };
-  document.addEventListener('DOMContentLoaded', () => renderIcons(document));
+  function initializeCursor() {
+    const finePointer = window.matchMedia('(pointer:fine) and (hover:hover)');
+    const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
+    if (!finePointer.matches || reducedMotion.matches || !document.body) return;
+
+    const cursor = document.createElement('div');
+    cursor.className = 'nexo-cursor';
+    cursor.setAttribute('aria-hidden', 'true');
+    cursor.innerHTML = '<span class="nexo-cursor__ring"></span><span class="nexo-cursor__dot"></span>';
+    document.body.append(cursor);
+
+    const root = document.documentElement;
+    const ring = cursor.querySelector('.nexo-cursor__ring');
+    const dot = cursor.querySelector('.nexo-cursor__dot');
+    const interactive = 'a[href], button:not(:disabled), select, summary, [role="button"], [data-cursor="interactive"]';
+    let pointerX = 0, pointerY = 0, ringX = 0, ringY = 0, frame = 0, positioned = false;
+
+    function stopTracking() {
+      root.classList.remove('has-custom-cursor');
+      cursor.classList.remove('is-visible', 'is-interactive', 'is-hero', 'is-pressed');
+      if (frame) window.cancelAnimationFrame(frame);
+      frame = 0;
+      positioned = false;
+    }
+
+    function moveRing() {
+      frame = 0;
+      ringX += (pointerX - ringX) * 0.19;
+      ringY += (pointerY - ringY) * 0.19;
+      ring.style.transform = `translate3d(${ringX.toFixed(2)}px,${ringY.toFixed(2)}px,0) translate(-50%,-50%)`;
+      if (Math.abs(pointerX - ringX) > 0.15 || Math.abs(pointerY - ringY) > 0.15) {
+        frame = window.requestAnimationFrame(moveRing);
+      }
+    }
+
+    document.addEventListener('pointermove', event => {
+      if (event.pointerType !== 'mouse' || reducedMotion.matches) return;
+      pointerX = event.clientX;
+      pointerY = event.clientY;
+      if (!positioned) {
+        ringX = pointerX;
+        ringY = pointerY;
+        ring.style.transform = `translate3d(${ringX}px,${ringY}px,0) translate(-50%,-50%)`;
+        dot.style.transform = `translate3d(${pointerX}px,${pointerY}px,0) translate(-50%,-50%)`;
+        positioned = true;
+      }
+      root.classList.add('has-custom-cursor');
+      cursor.classList.add('is-visible');
+      const target = event.target instanceof Element ? event.target : null;
+      cursor.classList.toggle('is-interactive', Boolean(target?.closest(interactive)));
+      cursor.classList.toggle('is-hero', Boolean(target?.closest('.hero-visual, .login-diagram')));
+      cursor.classList.toggle('is-text', Boolean(target?.closest('input:not([type="button"]):not([type="submit"]):not([type="reset"]), textarea, [contenteditable="true"]')));
+      if (!frame) frame = window.requestAnimationFrame(moveRing);
+    }, { passive: true });
+
+    document.addEventListener('pointerdown', event => {
+      if (event.pointerType === 'mouse' && event.button === 0) cursor.classList.add('is-pressed');
+    });
+    document.addEventListener('pointerup', () => cursor.classList.remove('is-pressed'));
+    document.addEventListener('pointerout', event => {
+      if (event.pointerType === 'mouse' && event.relatedTarget === null) stopTracking();
+    });
+    document.addEventListener('keydown', event => {
+      if (event.key === 'Tab') stopTracking();
+    });
+    window.addEventListener('blur', stopTracking);
+    document.addEventListener('visibilitychange', () => {
+      if (document.hidden) stopTracking();
+    });
+  }
+  document.addEventListener('DOMContentLoaded', () => {
+    renderIcons(document);
+    initializeCursor();
+  });
 })();
