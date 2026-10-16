@@ -1,0 +1,457 @@
+[hidden] {
+  display:none!important
+}
+.nav-link {
+  text-decoration:none
+}
+.nav-link:focus-visible {
+  border-radius:4px
+}
+.footer nav a,.footer>div a {
+  display:block;
+  padding:6px 0;
+  min-height:32px;
+  text-align:left;
+  color:var(--on-dark);
+  font-size:15px;
+  text-decoration:none;
+  transition:color .2s
+}
+.footer nav a:hover,.footer>div a:hover {
+  color:var(--lime)
+}
+.energy-illustration {
+  min-height:405px
+}
+.hero-visual .energy-illustration {
+  height:410px
+}
+.login-diagram .energy-illustration {
+  height:355px;
+  min-height:355px
+}
+.energy-data-card {
+  min-width:0
+}
+.energy-data-card strong {
+  margin:3px 0 2px
+}
+.energy-data-card p {
+  margin:0
+}
+.energy-node svg {
+  display:block
+}
+.login-form-wrap .back {
+  display:inline-flex;
+  gap:8px;
+  align-items:center;
+  position:absolute;
+  top:30px;
+  left:40px;
+  text-decoration:none;
+  color:var(--muted);
+  font-size:13.5px;
+  font-weight:600
+}
+.login-form-wrap .back:hover {
+  color:var(--forest)
+}
+.login-form-wrap .password {
+  position:relative;
+  display:flex;
+  align-items:center
+}
+.login-form-wrap .password input {
+  padding-right:54px
+}
+.login-form-wrap .password button {
+  position:absolute;
+  right:4px;
+  top:4px;
+  width:42px;
+  height:42px;
+  display:grid;
+  place-items:center;
+  background:transparent;
+  border:0;
+  border-radius:4px;
+  color:var(--muted)
+}
+.login-form-wrap .password button:hover {
+  background:var(--mint);
+  color:var(--forest)
+}
+.login-form-wrap .or {
+  display:flex;
+  align-items:center;
+  gap:12px;
+  margin:18px 0;
+  color:var(--muted);
+  font:400 11px var(--mono);
+  text-transform:uppercase
+}
+.login-form-wrap .or span {
+  height:1px;
+  flex:1;
+  background:var(--line)
+}
+.login-form-wrap .login-note {
+  display:flex;
+  gap:10px;
+  margin:24px 0 0;
+  font-size:13.5px;
+  color:var(--muted);
+  line-height:1.55
+}
+.login-form-wrap .login-note svg {
+  flex:none;
+  margin-top:3px;
+  color:var(--forest)
+}
+.chart-tip[hidden],.bar-tip[hidden] {
+  display:none!important
+}
+.nav-link {
+  text-decoration:none
+}
+.nav-link:focus-visible {
+  border-radius:4px
+}
+.profile-menu[hidden] {
+  display:none!important
+}
+.nav-link {
+  text-decoration:none
+}
+.nav-link:focus-visible {
+  border-radius:4px
+}
+.profile-menu a {
+  display:flex;
+  align-items:center;
+  gap:12px;
+  width:100%;
+  min-height:46px;
+  padding:0 12px;
+  border:0;
+  border-radius:4px;
+  font-weight:600;
+  font-size:14px;
+  text-align:left;
+  text-decoration:none;
+  color:var(--ink)
+}
+.profile-menu a:hover {
+  background:var(--paper)
+}
+.profile-menu a svg {
+  color:var(--leaf-ink)
+}
+.profile-menu .pm-head {
+  padding:12px 12px 14px;
+  border-bottom:1px solid var(--line);
+  margin-bottom:4px
+}
+.profile-menu .pm-head b,.profile-menu .pm-head small {
+  display:block
+}
+.profile-menu .pm-head small {
+  font-size:12px;
+  color:var(--muted);
+  margin-top:3px
+}
+.profile-menu button {
+  display:flex;
+  align-items:center;
+  gap:12px;
+  width:100%;
+  min-height:46px;
+  padding:0 12px;
+  background:none;
+  border:0;
+  border-radius:4px;
+  font-weight:600;
+  font-size:14px;
+  text-align:left
+}
+.profile-menu button:hover {
+  background:var(--paper)
+}
+.profile-menu button svg {
+  color:var(--leaf-ink)
+}
+.app-shell aside nav button {
+  display:flex;
+  align-items:center;
+  gap:12px
+}
+.app-shell aside nav button>span:nth-child(2) {
+  flex:1
+}
+.app-shell .user {
+  display:flex;
+  align-items:center;
+  gap:10px;
+  padding:18px 9px 2px;
+  margin-top:14px;
+  border-top:1px solid var(--line)
+}
+.app-shell .user>span {
+  display:grid;
+  place-items:center;
+  width:36px;
+  height:36px;
+  border-radius:50%;
+  background:var(--forest);
+  color:var(--lime);
+  font:500 12px var(--mono);
+  flex:none
+}
+.app-shell .user b {
+  display:block;
+  font-size:13px
+}
+.app-shell .user small {
+  display:block;
+  color:var(--muted);
+  font-size:11px;
+  line-height:1.4;
+  margin-top:2px
+}
+.select-wrap {
+  position:relative
+}
+.select-wrap select {
+  appearance:none;
+  padding-right:40px
+}
+.select-wrap>[data-icon] {
+  position:absolute;
+  right:12px;
+  top:50%;
+  transform:translateY(-50%);
+  pointer-events:none;
+  color:var(--muted)
+}
+.app-menu,.icon-btn,.avatar {
+  display:grid;
+  place-items:center;
+  flex:none
+}
+.icon-btn {
+  width:42px;
+  height:42px;
+  border:1px solid var(--line);
+  background:#fff;
+  border-radius:4px;
+  color:var(--forest)
+}
+.icon-btn:hover {
+  background:var(--mint)
+}
+.icon-btn.spin svg {
+  animation:spin .8s linear infinite
+}
+@keyframes spin {
+  to {
+    transform:rotate(360deg)
+  }
+}
+.avatar {
+  width:42px;
+  height:42px;
+  border:1px solid #b8c9bb;
+  border-radius:50%;
+  background:var(--mint);
+  font:500 12px var(--mono);
+  color:var(--forest)
+}
+.profile-menu {
+  display:block
+}
+.preview-chart-area {
+  fill:#91b89a40
+}
+.preview-chart-line {
+  fill:none;
+  stroke:var(--forest);
+  stroke-width:2.4;
+  vector-effect:non-scaling-stroke
+}
+.preview-ticks {
+  display:flex;
+  justify-content:space-between;
+  color:var(--muted);
+  font:11px var(--mono);
+  margin-top:8px
+}
+.demo-switches {
+  display:flex;
+  flex-direction:column;
+  gap:5px
+}
+.demo-switches button {
+  min-height:39px;
+  padding:0 12px;
+  text-align:left;
+  border:1px solid var(--line);
+  background:#fff;
+  border-radius:4px;
+  font-size:13px;
+  font-weight:700
+}
+.demo-switches button:hover,.demo-switches button.active {
+  background:var(--mint);
+  border-color:#a8c2ab;
+  color:var(--forest)
+}
+.preview-side-stat {
+  display:flex;
+  align-items:center;
+  gap:10px;
+  padding:10px 0;
+  border-top:1px solid var(--line)
+}
+.preview-side-stat>span {
+  display:grid;
+  place-items:center;
+  width:34px;
+  height:34px;
+  background:var(--mint);
+  color:var(--forest);
+  border-radius:4px
+}
+.preview-side-stat small,.preview-side-stat b {
+  display:block
+}
+.preview-side-stat small {
+  font-size:11px;
+  color:var(--muted)
+}
+.preview-side-stat b {
+  font:500 16px var(--mono)
+}
+.image-unavailable {
+  background:linear-gradient(135deg,#e8efe5,#cbea87);
+  min-height:180px
+}
+@media(max-width:1100px) {
+  .energy-data-card {
+    left:22%;
+    right:22%
+  }
+  .energy-node .node-cap {
+    white-space:normal;
+    width:100px
+  }
+  .hero-visual .energy-illustration {
+    min-height:370px;
+    height:370px
+  }
+}
+@media(max-width:900px) {
+  .hero-visual .energy-illustration {
+    min-height:350px;
+    height:350px
+  }
+  .energy-data-card {
+    left:24%;
+    right:24%;
+    top:34%;
+    padding:12px
+  }
+  .energy-data-card strong {
+    font-size:36px
+  }
+  .energy-node {
+    width:54px!important;
+    height:54px!important
+  }
+  .demo-body {
+    grid-template-columns:1fr;
+    gap:22px
+  }
+  .demo-side {
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:10px
+  }
+  .demo-side>small,.demo-switches {
+    grid-column:1/-1
+  }
+  .demo-switches {
+    flex-direction:row
+  }
+  .demo-switches button {
+    flex:1
+  }
+  .demo-chart svg {
+    height:160px
+  }
+}
+@media(max-width:560px) {
+  .login-form-wrap .back {
+    position:static;
+    margin-bottom:26px
+  }
+  .login-form-wrap {
+    width:100%
+  }
+  .login-form-wrap form {
+    width:100%
+  }
+  .hero-visual .energy-illustration {
+    min-height:290px;
+    height:290px
+  }
+  .energy-node {
+    width:44px!important;
+    height:44px!important
+  }
+  .energy-node svg {
+    width:19px;
+    height:19px
+  }
+  .energy-node .node-cap {
+    font-size:10px;
+    width:70px
+  }
+  .energy-node .node-cap small {
+    font-size:9px
+  }
+  .energy-data-card {
+    left:23%;
+    right:23%;
+    top:35%;
+    padding:10px;
+    border-radius:4px 4px 4px 20px
+  }
+  .energy-data-card strong {
+    font-size:28px
+  }
+  .energy-data-card .card-label {
+    font-size:8px
+  }
+  .energy-data-card p {
+    font-size:10px
+  }
+  .energy-data-card .mini-wave {
+    height:20px
+  }
+  .demo-side {
+    grid-template-columns:1fr
+  }
+  .demo-switches {
+    flex-wrap:wrap
+  }
+  .demo-switches button {
+    font-size:12px;
+    padding:0 8px
+  }
+  .app-top .select-wrap select {
+    font-size:12px;
+    padding-left:9px;
+    padding-right:30px
+  }
+}

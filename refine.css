@@ -1,0 +1,74 @@
+/* Galeria curva (seção "Natureza e energia") */
+.curve-section{padding:clamp(72px,9vw,120px) 0 clamp(48px,6vw,80px);background:var(--paper);overflow:hidden}
+.curve-head{max-width:640px;margin:0 auto 12px;padding:0 24px;text-align:center}
+.curve-head h2{font-size:clamp(32px,4.6vw,56px);line-height:1.08;letter-spacing:-.02em;margin-bottom:14px}
+.curve-head h2 em{color:var(--forest);font-style:italic}
+.curve-head p{color:var(--muted);margin:0 auto;max-width:52ch}
+.curve-gallery{position:relative;width:100%;height:clamp(300px,44vw,540px);container-type:size;opacity:0;transition:opacity .6s var(--ease)}
+.curve-gallery.ready{opacity:1}
+.cg-band{position:absolute;inset:0;pointer-events:none}
+.cg-tile{position:absolute;transform-style:preserve-3d}
+.cg-slice{position:absolute;top:0;overflow:hidden;background:var(--mint)}
+.cg-slice.first{border-radius:10px 0 0 10px}.cg-slice.last{border-radius:0 10px 10px 0}
+.cg-slice img{position:absolute;top:0;max-width:none;object-fit:cover}
+.curve-note{display:block;text-align:center;margin-top:8px;padding:0 24px;font:11px var(--mono);color:var(--muted);letter-spacing:.04em}
+
+/* Fluxo da solução: faixa verde-escura pontual, linhas de luz convergindo (inspirada na animação "fiber optic") */
+.flow-section{background:var(--forest-3);color:#fff;padding:clamp(64px,8vw,104px) 24px;overflow:hidden}
+.flow-head{max-width:680px;margin:0 auto 36px;text-align:center}
+.flow-head h2{color:#fff;font-size:clamp(30px,4.2vw,50px);line-height:1.1;margin-bottom:14px}
+.flow-head h2 em{color:var(--lime);font-style:italic}
+.flow-head p{color:var(--on-dark);margin:0}
+.flow-section .kicker{color:var(--lime)}
+.flow-svg{display:block;width:100%;max-width:1000px;margin:0 auto}
+.flow-svg .fn rect{fill:#ffffff10;stroke:var(--on-dark);stroke-width:1.2}
+.flow-svg .fn.dash rect{stroke-dasharray:5 4}
+.flow-svg .fn.live rect{fill:var(--lime);stroke:var(--lime)}
+.flow-svg .t1{fill:#fff;font:600 15px var(--body)}.flow-svg .t2{fill:var(--on-dark);font:12px var(--mono)}
+.flow-svg .fn.live .t1,.flow-svg .fn.live .t2{fill:var(--forest-3)}
+.flow-svg .t3{fill:var(--amber);font:11px var(--mono);letter-spacing:.06em;text-transform:uppercase}
+.flow-line{fill:none;stroke:var(--lime);stroke-width:2;stroke-linecap:round;stroke-dasharray:3 9;animation:flowDash 1.4s linear infinite}
+@keyframes flowDash{to{stroke-dashoffset:-24}}
+@media(prefers-reduced-motion:reduce){.flow-line{animation:none}}
+.flow-steps{display:none;counter-reset:f;max-width:420px;margin:20px auto 0;color:var(--on-dark);font-size:14px}
+.flow-steps li{counter-increment:f;padding:10px 0 10px 34px;position:relative;border-top:1px solid #ffffff22}
+.flow-steps li:before{content:counter(f);position:absolute;left:0;top:10px;font:500 12px var(--mono);color:var(--lime)}
+@media(max-width:720px){.flow-svg{display:none}.flow-steps{display:block}}
+
+/* Gráficos do painel (SVG/HTML puros; o dashboard.js já gera esta marcação) */
+.chart{margin:0}
+.chart.is-dim{opacity:.55}
+.chart-body{display:grid;grid-template-columns:48px 1fr;gap:8px;padding-top:18px}
+.chart-y{position:relative;display:flex;flex-direction:column;justify-content:space-between;align-items:flex-end;font:11px var(--mono);color:var(--muted)}
+.chart-unit{position:absolute;top:-18px;right:0;font-size:10px;letter-spacing:.06em;color:var(--leaf-ink)}
+.chart-plot,.bars{position:relative;border-left:1px solid var(--line)}
+.chart-grid{position:absolute;inset:0;display:flex;flex-direction:column;justify-content:space-between;pointer-events:none}
+.chart-grid i{display:block;height:1px;background:var(--line)}
+.chart-svg{position:absolute;inset:0;width:100%;height:100%;overflow:visible}
+.chart-area{fill:#91b89a40}.chart-line{fill:none;stroke:var(--forest);stroke-width:2;vector-effect:non-scaling-stroke}
+.chart-cross{position:absolute;top:0;bottom:0;width:1px;background:var(--forest);opacity:.35;pointer-events:none}
+.chart-dot{position:absolute;width:11px;height:11px;margin:-5px 0 0 -5px;border-radius:50%;background:var(--forest);border:2px solid #fff;pointer-events:none}
+.chart-tip,.bar-tip{position:absolute;z-index:5;background:var(--forest-3);color:#fff;padding:8px 10px;border-radius:4px;font-size:12px;line-height:1.35;pointer-events:none;white-space:nowrap}
+.chart-tip{transform:translate(-50%,-115%)}
+.bar-tip{bottom:100%;left:50%;transform:translateX(-50%)}.bar-tip.left{left:auto;right:0;transform:none}
+.chart-tip b,.chart-tip small,.bar-tip b,.bar-tip small{display:block}
+.chart-tip small,.bar-tip small{color:var(--on-dark);font:11px var(--mono)}
+.chart-x{display:flex;justify-content:space-between;margin:8px 0 0 56px;font:11px var(--mono);color:var(--muted)}
+.bars{display:flex;gap:2px;border-bottom:1px solid var(--line)}
+.bar-col{position:relative;flex:1}
+.bar{position:absolute;left:12%;right:12%;bottom:0;border-radius:2px 2px 0 0;background:var(--leaf);transform-origin:bottom;animation:barIn .5s var(--ease) both}
+.bar.neg{background:var(--amber)}
+.bars-zero{position:absolute;left:0;right:0;top:50%;height:1px;background:var(--leaf-ink);opacity:.45}
+@keyframes barIn{from{transform:scaleY(0)}}
+@media(prefers-reduced-motion:reduce){.bar{animation:none}}
+.legend{display:flex;flex-wrap:wrap;gap:6px 16px;font-size:12px;color:var(--muted)}
+.legend li{display:flex;align-items:center;gap:7px}
+.lg-line{width:16px;height:2px;background:var(--forest)}.lg-pos{width:10px;height:10px;border-radius:2px;background:var(--leaf)}.lg-neg{width:10px;height:10px;border-radius:2px;background:var(--amber)}
+@media(max-width:560px){.chart-x span:nth-child(even){display:none}}
+
+/* Diagrama de energia (hero e login): corrige legendas sobrepostas aos ícones
+   (o calc() original estava sem espaços) e tira a máscara que apagava os nós.
+   A máscara agora vale só para a grade de pontos. */
+.energy-illustration{background-image:none;-webkit-mask-image:none;mask-image:none}
+.energy-illustration::before{content:"";position:absolute;inset:0;z-index:0;background-image:radial-gradient(#24543c33 1px,transparent 1.4px);background-size:28px 28px;-webkit-mask-image:radial-gradient(ellipse at 50% 50%,#000 48%,transparent 85%);mask-image:radial-gradient(ellipse at 50% 50%,#000 48%,transparent 85%)}
+.energy-node .node-cap{top:calc(100% + 8px)}

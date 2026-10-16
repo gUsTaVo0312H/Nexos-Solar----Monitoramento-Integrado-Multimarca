@@ -1,0 +1,132 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#f7f8f2">
+  <meta name="description" content="Solarneo Monitor: proposta de plataforma para acompanhar sistemas fotovoltaicos off-grid em um só lugar.">
+  <title>Solarneo Monitor · Monitoramento fotovoltaico off-grid</title>
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/landing.css"><link rel="stylesheet" href="css/overrides.css"><link rel="stylesheet" href="css/refine.css">
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+</head>
+<body>
+<main class="landing reveal-on" id="top">
+  <header class="topbar">
+    <a class="brand" href="#top" aria-label="Solarneo Monitor, início"><span class="brand-mark"><i></i><i></i><i></i></span><span class="brand-word">solarneo <b>monitor</b></span></a>
+    <nav id="main-nav" aria-label="Principal">
+      <a class="nav-link" href="#overview">Visão geral</a>
+      <a class="nav-link" href="#recursos">Recursos</a>
+      <a class="nav-link" href="#como">Como funciona</a>
+      <a class="nav-link" href="#compatibilidade">Compatibilidade</a>
+      <a class="nav-link" href="#seguranca">Segurança</a>
+      <a class="btn btn-secondary" href="#demo">Explorar a demonstração</a>
+      <a class="btn btn-primary" href="login.html">Acessar plataforma <span data-icon="arrow"></span></a>
+    </nav>
+    <button class="menu-btn" id="menu-toggle" type="button" aria-label="Abrir menu" aria-expanded="false" aria-controls="main-nav"><span data-icon="menu"></span></button>
+  </header>
+
+  <section class="hero" id="overview">
+    <div class="hero-copy">
+      <span class="eyebrow hero-in d1"><i></i>Energia em movimento · Informação em tempo real</span>
+      <h1 class="hero-in d2">Energia sob controle. <em>Mesmo onde a rede não chega.</em></h1>
+      <p class="hero-in d3">Uma visão centralizada dos sistemas fotovoltaicos off-grid para acompanhar baterias, inversores, consumo e alertas em um só lugar.</p>
+      <div class="hero-actions hero-in d4">
+        <a class="btn btn-primary" href="#demo">Explorar a plataforma <span data-icon="arrow"></span></a>
+        <a class="btn btn-secondary" href="login.html">Acessar monitoramento</a>
+      </div>
+      <span class="demo-note hero-in d5">Protótipo visual · todos os dados são fictícios</span>
+    </div>
+    <div class="hero-visual hero-in d3">
+      <div class="energy-illustration" role="img" aria-label="Diagrama ilustrativo dos painéis solares, inversor, bateria, cargas e monitoramento">
+        <div class="energy-wire wire-top"></div><div class="energy-wire wire-bottom"></div><div class="energy-wire wire-down"></div><div class="energy-wire wire-up"></div>
+        <div class="energy-node solar"><span data-icon="sun" data-size="24"></span><span class="node-cap"><b>Painéis FV</b><small>1.100 W</small></span></div>
+        <div class="energy-node inverter"><span data-icon="cpu" data-size="24"></span><span class="node-cap"><b>Inversor</b><small>Operando</small></span></div>
+        <div class="energy-node battery"><span data-icon="battery" data-size="24"></span><span class="node-cap"><b>Bateria</b><small>48 V · LFP</small></span></div>
+        <div class="energy-node loads"><span data-icon="bolt" data-size="24"></span><span class="node-cap"><b>Cargas</b><small>430 W</small></span></div>
+        <div class="energy-data-card"><span class="card-label"><i></i>Dados de demonstração</span><strong>78<small>%</small></strong><p>Estado de carga da bateria</p><svg class="mini-wave" viewBox="0 0 190 46" preserveAspectRatio="none" aria-hidden="true"><path d="M0 38 20 34 38 36 58 21 78 27 95 13 115 19 136 8 155 16 175 10 190 13"></path></svg></div>
+      </div>
+    </div>
+  </section>
+
+  <div class="capability-strip">
+    <div><span class="strip-n">01</span><span data-icon="grid"></span><b>Monitoramento centralizado</b></div>
+    <div><span class="strip-n">02</span><span data-icon="history"></span><b>Histórico operacional</b></div>
+    <div><span class="strip-n">03</span><span data-icon="battery"></span><b>Estado da bateria</b></div>
+    <div><span class="strip-n">04</span><span data-icon="radio"></span><b>Alertas e comunicação</b></div>
+  </div>
+
+  <section class="photo-band" data-reveal>
+    <div class="photo-copy"><span class="kicker">Onde a rede não chega</span><h2>Sistemas isolados <em>também merecem clareza.</em></h2><p>Propriedades rurais, abrigos e instalações remotas dependem de painéis, baterias e inversores. Saber como estão faz diferença no dia a dia.</p></div>
+    <figure><img src="assets/img/colinas-amanhecer.jpg" alt="Colinas verdes com neblina ao amanhecer" loading="lazy"><figcaption>Imagem ilustrativa</figcaption></figure>
+  </section>
+  <section class="curve-section" id="natureza" data-reveal>
+    <div class="curve-head"><span class="kicker">Natureza e energia</span><h2>Energia que acompanha <em>o ritmo do campo.</em></h2><p>Paisagens e instalações de energia renovável que inspiram a identidade do projeto.</p></div>
+    <div class="curve-gallery" data-curve-gallery data-images="assets/img/turbinas-por-do-sol.jpg,assets/img/luz-na-floresta.jpg,assets/img/fachada-solar.jpg,assets/img/arvore-amanhecer.jpg,assets/img/linhas-transmissao.jpg,assets/img/colinas-amanhecer.jpg" role="img" aria-label="Galeria em movimento com paisagens e estruturas de energia renovável"></div>
+    <small class="curve-note">Imagens ilustrativas (Unsplash). Não representam instalações da Solarneo.</small>
+  </section>
+
+
+  <section class="section problem" id="problema">
+    <div class="section-heading" data-reveal><span class="kicker">Uma camada de clareza</span><h2>Muitos equipamentos. <em>Uma visão unificada.</em></h2><p>Inversores, baterias e medidores costumam expor suas informações em lugares distintos. A proposta é reunir as medições disponíveis em um único ambiente, com histórico e alertas.</p></div>
+    <div data-reveal>
+      <div class="unify-controls" role="group" aria-label="Etapas da visualização"><button class="active" type="button" data-unify="false" aria-pressed="true"><b>1</b> Informações dispersas</button><button type="button" data-unify="true" aria-pressed="false"><b>2</b> Visão unificada</button></div>
+      <div class="unify-stage" id="unify-stage">
+        <div class="unify-frame" aria-hidden="true"><header><span class="brand"><span class="brand-mark"><i></i><i></i><i></i></span><span class="brand-word">solarneo <b>monitor</b></span></span><span class="demo-pill"><i></i> Dados de demonstração</span></header><div class="frame-chart"><small>Potência · W · últimas 24 h</small><svg viewBox="0 0 300 50" preserveAspectRatio="none" aria-hidden="true"><path d="M0 40 22 36 44 38 70 22 96 30 124 14 150 20 178 8 206 18 236 10 266 22 300 12"></path></svg></div></div>
+        <div class="ub ub1"><span class="ub-ico" data-icon="battery"></span><div><small>Bateria</small><b>78% de carga</b></div><em class="ub-src">Interface do BMS</em></div>
+        <div class="ub ub2"><span class="ub-ico" data-icon="bolt"></span><div><small>Tensão</small><b>52,4 V</b></div><em class="ub-src">Medidor independente</em></div>
+        <div class="ub ub3"><span class="ub-ico" data-icon="activity"></span><div><small>Cargas</small><b>430 W</b></div><em class="ub-src">Tela do inversor</em></div>
+        <div class="ub ub4"><span class="ub-ico" data-icon="history"></span><div><small>Registro</small><b>08:10</b></div><em class="ub-src">Anotação manual</em></div>
+        <div class="ub ub5"><span class="ub-ico" data-icon="sun"></span><div><small>Geração FV</small><b>1.100 W</b></div><em class="ub-src">Controlador solar</em></div>
+        <div class="ub ub6"><span class="ub-ico" data-icon="alert"></span><div><small>Avisos</small><b>1 alerta</b></div><em class="ub-src">Mensagens separadas</em></div>
+      </div>
+      <p class="unify-caption" id="unify-caption" aria-live="polite">Cada informação costuma ficar em uma interface, aplicativo ou registro diferente.<span>Ilustração conceitual: a integração depende das interfaces disponibilizadas por cada fabricante.</span></p>
+    </div>
+  </section>
+
+  <section class="section compat" id="compatibilidade">
+    <div class="section-heading" data-reveal><span class="kicker">Compatibilidade planejada</span><h2>Equipamentos de várias marcas, <em>um só painel.</em></h2><p>A plataforma foi pensada para centralizar dados de equipamentos de fabricantes diferentes. Cada integração depende das interfaces que o fabricante disponibiliza.</p></div>
+    <div class="compat-cols" data-reveal>
+      <div class="compat-col"><h3>Inversores</h3><small>Categoria prevista</small><ul><li>Inversor off-grid<span>Sem validação</span></li><li>Inversor híbrido<span>Sem validação</span></li><li>Controlador de carga<span>Sem validação</span></li></ul></div>
+      <div class="compat-col"><h3>Baterias</h3><small>Categoria prevista</small><ul><li>Lítio com BMS<span>Sem validação</span></li><li>Chumbo-ácido<span>Sem validação</span></li><li>Medidor de bateria<span>Sem validação</span></li></ul></div>
+      <div class="compat-col"><h3>Gateways</h3><small>Categoria prevista</small><ul><li>Interface serial<span>Sem validação</span></li><li>Gateway de rede<span>Sem validação</span></li><li>Conversor de protocolo<span>Sem validação</span></li></ul></div>
+    </div>
+    <p class="compat-note" data-reveal><span data-icon="info"></span>Nenhuma compatibilidade foi validada neste protótipo. Marcas e modelos reais exigem integração específica e testes técnicos.</p>
+  </section>
+
+  <section class="section features" id="recursos">
+    <div class="section-heading row" data-reveal><div><span class="kicker">Leitura essencial</span><h2>O sistema, em sinais <em>que fazem sentido.</em></h2></div><p>Indicadores desenhados para dar contexto operacional sem sobrecarregar a leitura.</p></div>
+    <div class="feature-grid">
+      <article class="fcard f1 dark" data-reveal><header><span class="fi" data-icon="battery"></span><small>01</small></header><div class="f-art f-soc"><svg viewBox="0 0 120 120" aria-hidden="true"><circle cx="60" cy="60" r="50" class="trk"></circle><circle cx="60" cy="60" r="50" class="val" pathLength="100" stroke-dasharray="78 100"></circle></svg><strong>78<small>%</small></strong></div><h3>SOC da bateria</h3><p>Acompanhe o estado de carga com leitura imediata e faixas de referência.</p></article>
+      <article class="fcard f2" data-reveal><header><span class="fi" data-icon="activity"></span><small>02</small></header><div class="f-art f-wave"><svg viewBox="0 0 300 80" preserveAspectRatio="none" aria-hidden="true"><path class="w1" d="M0 44c25 0 25-30 50-30s25 52 50 52 25-44 50-44 25 36 50 36 25-26 50-26 25 12 50 12"></path><path class="w2" d="M0 52c25 0 25-14 50-14s25 30 50 30 25-26 50-26 25 22 50 22 25-16 50-16 25 6 50 6"></path></svg><ul><li><i class="lg-line"></i>Tensão (V)</li><li><i class="lg-amber"></i>Corrente (A)</li></ul></div><h3>Tensão e corrente</h3><p>Visualize grandezas elétricas com unidades e referências sempre explícitas.</p></article>
+      <article class="fcard f3 mint" data-reveal><header><span class="fi" data-icon="bolt"></span><small>03</small></header><div class="f-art f-bars"> <i style="height:35%"></i><i style="height:64%"></i><i style="height:48%"></i><i style="height:78%"></i><i style="height:55%"></i><i style="height:89%"></i><i style="height:66%"></i><i style="height:72%"></i><i style="height:40%"></i><i style="height:58%"></i></div><h3>Potência e consumo</h3><p>Entenda como as cargas se comportam ao longo do dia.</p></article>
+      <article class="fcard f4" data-reveal><header><span class="fi" data-icon="sun"></span><small>04</small></header><div class="f-art f-flow"><i class="neg" style="height:15%;left:1.2%;top:50%"></i><i class="neg" style="height:22%;left:11.2%;top:50%"></i><i class="neg" style="height:19%;left:21.2%;top:50%"></i><i class="pos" style="height:5%;left:31.2%;bottom:50%"></i><i class="pos" style="height:27%;left:41.2%;bottom:50%"></i><i class="pos" style="height:40%;left:51.2%;bottom:50%"></i><i class="pos" style="height:31%;left:61.2%;bottom:50%"></i><i class="pos" style="height:10%;left:71.2%;bottom:50%"></i><i class="neg" style="height:18%;left:81.2%;top:50%"></i><i class="neg" style="height:25%;left:91.2%;top:50%"></i><b></b></div><h3>Carga e descarga</h3><p>Compare a energia que entra na bateria com a que sai.</p></article>
+      <article class="fcard f5 forest" data-reveal><header><span class="fi" data-icon="alert"></span><small>05</small></header><div class="f-art f-alerts"><span class="chip crit"><span data-icon="alert" data-size="14"></span>Falha reportada</span><span class="chip warn"><span data-icon="clock" data-size="14"></span>Dados desatualizados</span><span class="chip off"><span data-icon="slash" data-size="14"></span>Sem comunicação</span></div><h3>Estado e alertas</h3><p>Diferencie falha reportada, perda de comunicação e dados desatualizados.</p></article>
+      <article class="fcard f6" data-reveal><div class="f6-copy"><header><span class="fi" data-icon="history"></span><small>06</small></header><h3>Histórico de medições</h3><p>Consulte valores anteriores por instalação, tipo de medição e período, em gráficos e tabelas.</p></div><table class="f-table" aria-label="Tabela de medições fictícias"><thead><tr><th>Data</th><th>Horário</th><th>Valor</th><th>Unid.</th></tr></thead><tbody><tr><td>15/10/2026</td><td>14:30</td><td>430</td><td>W</td></tr><tr><td>15/10/2026</td><td>14:00</td><td>408</td><td>W</td></tr><tr><td>15/10/2026</td><td>13:30</td><td>452</td><td>W</td></tr><tr><td>15/10/2026</td><td>13:00</td><td>391</td><td>W</td></tr></tbody></table></article>
+    </div>
+  </section>
+
+    <section class="flow-section" id="fluxo" data-reveal>
+    <div class="flow-head"><span class="kicker">O caminho dos dados</span><h2>Marcas diferentes, <em>uma única visão.</em></h2><p>A proposta é ler cada equipamento do seu jeito, traduzir para um formato comum e mostrar tudo no painel. Hoje só o painel existe, com dados fictícios; as demais etapas dependem de validação técnica.</p></div>
+    <svg class="flow-svg" viewBox="0 0 1000 380" role="img" aria-label="Diagrama conceitual: equipamentos de marcas diferentes, aquisição somente leitura a validar, normalização, API e armazenamento futuros e painel centralizado."><g class="fn "><rect x="20" y="40" width="180" height="60" rx="6"/><text x="110.0" y="67.0" text-anchor="middle" class="t1">Marca A (fictícia)</text><text x="110.0" y="86.0" text-anchor="middle" class="t2">RS485</text></g><path class="flow-line" d="M200,70 C260,70 250,190 300,190"/><g class="fn "><rect x="20" y="160" width="180" height="60" rx="6"/><text x="110.0" y="187.0" text-anchor="middle" class="t1">Marca B (fictícia)</text><text x="110.0" y="206.0" text-anchor="middle" class="t2">CAN</text></g><path class="flow-line" d="M200,190 C260,190 250,190 300,190"/><g class="fn "><rect x="20" y="280" width="180" height="60" rx="6"/><text x="110.0" y="307.0" text-anchor="middle" class="t1">Marca C (fictícia)</text><text x="110.0" y="326.0" text-anchor="middle" class="t2">Modbus</text></g><path class="flow-line" d="M200,310 C260,310 250,190 300,190"/><g class="fn dash"><rect x="300" y="158" width="120" height="64" rx="6"/><text x="360.0" y="187.0" text-anchor="middle" class="t1">Aquisição</text><text x="360.0" y="206.0" text-anchor="middle" class="t2">somente leitura</text></g><path class="flow-line" d="M420,190 H470"/><g class="fn dash"><rect x="470" y="158" width="120" height="64" rx="6"/><text x="530.0" y="187.0" text-anchor="middle" class="t1">Normalização</text><text x="530.0" y="206.0" text-anchor="middle" class="t2">formato comum</text></g><path class="flow-line" d="M590,190 H640"/><g class="fn dash"><rect x="640" y="158" width="120" height="64" rx="6"/><text x="700.0" y="187.0" text-anchor="middle" class="t1">API + banco</text><text x="700.0" y="206.0" text-anchor="middle" class="t2">etapa futura</text></g><path class="flow-line" d="M760,190 H810"/><g class="fn live"><rect x="810" y="158" width="170" height="64" rx="6"/><text x="895.0" y="187.0" text-anchor="middle" class="t1">Painel central</text><text x="895.0" y="206.0" text-anchor="middle" class="t2">este protótipo</text></g><text x="360" y="250" text-anchor="middle" class="t3">a validar</text><text x="530" y="250" text-anchor="middle" class="t3">a validar</text><text x="700" y="250" text-anchor="middle" class="t3">não implementado</text></svg>
+    <ol class="flow-steps"><li>Equipamentos de marcas diferentes (RS485, CAN, Modbus)</li><li>Aquisição somente leitura: a validar com manuais e testes</li><li>Normalização dos dados em um formato comum</li><li>API e armazenamento: etapa futura, não implementada</li><li>Painel centralizado: é o que este protótipo mostra</li></ol>
+  </section>
+  <section class="how" id="como"><div class="section-heading light" data-reveal><span class="kicker">Fluxo planejado</span><h2>Da medição à <em>informação.</em></h2><p>Esta é a arquitetura prevista para a solução. Cada integração será construída de acordo com as interfaces disponibilizadas pelo fabricante.</p></div>
+    <ol class="steps"><li data-reveal style="--i:0"><span class="step-ico" data-icon="cpu"></span><b class="step-n">Etapa 01</b><h3>Equipamentos</h3><p>Inversores e baterias disponibilizam as medições compatíveis.</p></li><li data-reveal style="--i:1"><span class="step-ico" data-icon="radio"></span><b class="step-n">Etapa 02</b><h3>Interface ou gateway</h3><p>Um dispositivo compatível coleta e interpreta os dados acessíveis.</p></li><li data-reveal style="--i:2"><span class="step-ico" data-icon="layers"></span><b class="step-n">Etapa 03</b><h3>Organização</h3><p>As informações são transmitidas e estruturadas pelo sistema.</p></li><li data-reveal style="--i:3"><span class="step-ico" data-icon="activity"></span><b class="step-n">Etapa 04</b><h3>Plataforma</h3><p>Indicadores, históricos e alertas são apresentados em um só lugar.</p></li></ol>
+  </section>
+
+  <section class="section demo-section" id="demo"><div class="section-heading row" data-reveal><div><span class="kicker">Experimente a proposta</span><h2>Informação técnica, <em>sem ruído.</em></h2></div><p>Alterne as visualizações. Todo o conteúdo desta área é fictício e não representa uma conexão real com equipamentos.</p></div>
+    <div data-reveal><div class="product-demo"><div class="demo-top"><div><span class="mono-label">Solarneo Monitor / Prévia</span><h3>Painel de uma instalação</h3></div><span class="demo-pill"><i></i>Dados fictícios</span></div><div class="demo-body" id="landing-demo-body"><div class="demo-stat"><small>Estado de carga da bateria</small><strong id="preview-soc">78<span>%</span></strong><em><i></i><span id="preview-state">Faixa normal</span></em></div><div class="demo-chart"><header><b id="preview-chart-title">Potência das cargas</b><small>Últimas 24 horas</small></header><svg viewBox="0 0 300 160" preserveAspectRatio="none" aria-label="Gráfico fictício de potência"><path class="preview-chart-area" d="M0 137 20 125 40 129 60 91 80 110 100 62 120 80 140 39 160 54 180 24 200 50 220 35 240 62 260 43 280 58 300 32 L300 160 L0 160Z"></path><path class="preview-chart-line" d="M0 137 20 125 40 129 60 91 80 110 100 62 120 80 140 39 160 54 180 24 200 50 220 35 240 62 260 43 280 58 300 32"></path></svg><div class="preview-ticks"><span>00h</span><span>06h</span><span>12h</span><span>18h</span><span>Agora</span></div></div><div class="demo-side"><small>Alternar indicador</small><div class="demo-switches"><button type="button" class="active" data-preview="soc">Bateria</button><button type="button" data-preview="power">Consumo</button><button type="button" data-preview="pv">Geração FV</button></div><div class="preview-side-stat"><span data-icon="bolt"></span><div><small>Potência instantânea</small><b id="preview-power">430 W</b></div></div><div class="preview-side-stat"><span data-icon="sun"></span><div><small>Geração fotovoltaica</small><b id="preview-pv">1.100 W</b></div></div></div></div></div></div>
+    <div class="center"><a class="btn btn-dark" href="dashboard.html">Entrar na demonstração completa <span data-icon="arrow"></span></a></div>
+  </section>
+
+  <section class="section security" id="seguranca"><div class="security-intro" data-reveal><span class="icon-box" data-icon="shield" data-size="28"></span><span class="kicker">Confiança por princípio</span><h2>Clareza também é saber <em>como o dado é tratado.</em></h2><p>Princípios que orientam a evolução da plataforma. Este protótipo não declara certificações nem auditorias.</p><span class="stale-sample"><span data-icon="clock" data-size="16"></span>Exemplo de aviso: “Último dado há 42 min”</span></div>
+    <ul class="security-list"><li data-reveal><span>01</span><b>Acesso controlado à plataforma</b><span data-icon="lock"></span></li><li data-reveal><span>02</span><b>Separação entre dados de diferentes instalações</b><span data-icon="layers"></span></li><li data-reveal><span>03</span><b>Registro do histórico de medições</b><span data-icon="history"></span></li><li data-reveal><span>04</span><b>Identificação de dados desatualizados</b><span data-icon="clock"></span></li><li data-reveal><span>05</span><b>Integrações planejadas para respeitar as interfaces e os limites dos fabricantes</b><span data-icon="shield"></span></li></ul>
+  </section>
+
+  <section class="closing"><div class="closing-lines" aria-hidden="true"></div><div data-reveal><span class="kicker">Solarneo Monitor</span><h2>Tenha uma visão mais clara de cada <em>sistema.</em></h2><p>Conheça a experiência de monitoramento pensada para operações fotovoltaicas off-grid.</p><div class="closing-actions"><a class="btn btn-primary" href="#recursos">Conhecer a plataforma</a><a class="btn btn-secondary" href="login.html">Acessar monitoramento</a></div></div><figure data-reveal><img src="https://images.unsplash.com/photo-1497435334941-8c899ee9e8e9?w=700&h=800&fit=crop&auto=format" alt="Paisagem verde sob luz natural" loading="lazy"><figcaption>Energia em equilíbrio</figcaption></figure></section>
+
+  <footer class="footer"><div class="footer-brand"><a class="brand brand-light" href="#top"><span class="brand-mark"><i></i><i></i><i></i></span><span class="brand-word">solarneo <b>monitor</b></span></a><p>Monitoramento fotovoltaico off-grid. Protótipo demonstrativo, sem dados reais.</p></div><nav aria-label="Seções"><h4>Plataforma</h4><a href="#overview">Visão geral</a><a href="#recursos">Recursos</a><a href="#como">Como funciona</a><a href="#compatibilidade">Compatibilidade</a><a href="#seguranca">Segurança</a></nav><div><h4>Acesso</h4><a href="login.html">Acesso ao sistema</a><a href="dashboard.html">Explorar demonstração</a></div><div><h4>Institucional</h4><span>Solarneo Soluções Elétricas</span><span class="placeholder">[Endereço · a definir]</span><span class="placeholder">[Contato · a definir]</span></div><small>© <span id="current-year">2026</span> Solarneo Soluções Elétricas · Marca provisória, substituível por logo oficial</small></footer>
+</main>
+<script src="js/common.js" defer></script><script src="js/landing.js" defer></script><script src="js/curve-gallery.js" defer></script>
+</body></html>
